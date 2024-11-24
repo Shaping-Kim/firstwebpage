@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .header {
+          background-image: url(cafe.jpg);
+          text-align: center;
+          padding: 20px 0;
+          color: black;
+          font-size: 2em;
+        }
+        .nav {
+          background-color: #8b4513;
+          overflow: hidden;
+          z-index: 999;
+          box-shadow: 5px 5px 10px gray;
+          display: flex;
+        }
+        .nav.sticky {
+          position: fixed;
+          top: 0;
+          width: 100%;
+        }
+        .nav a {
+          float: left;
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 1.5em;
+        }
+        .nav a:hover {
+          background-color: white;
+          color: black;
+        }
+        .coffee {
+          font-size: 25px;
+        }
+        .sec1 {
+          background-color: #8b4513;
+          color: white;
+          margin: 5px 0px;
+          padding: 1Q 1px;
+        }
+        .article1 {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          margin-top: 20px;
+        }
+        .article1 img {
+          width: 300px;
+          height: 300px;
+          border-radius: 50%;
+        }
+        .desc {
+          flex: 1;
+          background-color: #8b4513;
+          color: white;
+          padding: 20px;
+          margin-left: 20px;
+          margin-right: 50px;
+        }
+        .desc h2 {
+          text-align: left;
+          font-size: 2em;
+          margin-bottom: 20px;
+        }
+        .circle {
+          position: relative;
+          width: 300px;
+          height: 300px;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+        .half {
+          position: absolute;
+          width: 50%;
+          height: 100%;
+          transition: width 0.5s, background-size 0.5s, background-position 0.5s;
+          background-size: 200% 100%;
+          background-position: center;
+        }
+        #leftHalf {
+          left: 0;
+          background-image: url(ice_americano.jpg);
+          clip-path: circle(100% at 0% 50%);
+        }
+        #rightHalf {
+          right: 0;
+          background-image: url(hot_americano.jpg);
+          clip-path: circle(100% at 100% 50%);
+        }
+        #leftHalfLatte {
+          left: 0;
+          background-image: url(ice_cafelatte.jpg);
+          clip-path: circle(100% at 0% 50%);
+        }
+        #rightHalfLatte {
+          right: 0;
+          background-image: url(hot_cafelatte.jpg);
+          clip-path: circle(100% at 100% 50%);
+        }
+        #leftHalfcappuccino {
+          left: 0;
+          background-image: url(ice_cappuccino.jpg);
+          clip-path: circle(100% at 0% 50%);
+        }
+        #rightHalfcappuccino {
+          right: 0;
+          background-image: url(hot_cappuccino.jpg);
+          clip-path: circle(100% at 100% 50%);
+        }
+        #leftHalfcafemoca {
+          left: 0;
+          background-image: url(ice_cafe_mocha.jpg);
+          clip-path: circle(100% at 0% 50%);
+        }
+        #rightHalfcafemoca {
+          right: 0;
+          background-image: url(hot_cafe_mocha.jpg);
+          clip-path: circle(100% at 100% 50%);
+        }
+        #leftHalfcaramelmacchiato {
+          left: 0;
+          background-image: url(ice_caramel_macchiato.jpg);
+          clip-path: circle(100% at 0% 50%);
+        }
+        #rightHalfcaramelmacchiato {
+          right: 0;
+          background-image: url(hot_caramel_macchiato.jpg);
+          clip-path: circle(100% at 100% 50%);
+        }
+        #leftHalfdolcelatte {
+          left: 0;
+          background-image: url(ice_dolcelatte.jpg);
+          clip-path: circle(100% at 0% 50%);
+        }
+        #rightHalfdolcelatte {
+          right: 0;
+          background-image: url(hot_dolcelatte.jpg);
+          clip-path: circle(100% at 100% 50%);
+        }
+        .Frappuccino_Blended {
+          font-size: 25px;
+        }
+        .sec2 {
+          background-color: #1c3d36;
+          color: white;
+          margin: 5px 0px;
+          padding: 1Q 1px;
+        }
+        .blank {
+          padding: 2px;
+        }
+        .article2 {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          margin-top: 20px;
+        }
+        .article2 img {
+          width: 300px;
+          height: 300px;
+          border-radius: 50%;
+        }
+        .desc1 {
+          flex: 1;
+          background-color: #1c3d36;
+          color: white;
+          padding: 20px;
+          margin-left: 20px;
+          margin-right: 50px;
+        }
+        .desc1 h2 {
+          text-align: left;
+          font-size: 2em;
+          margin-bottom: 20px;
+        }
+        #Javachip_Frappuccino {
+          background-image: url(Javachip_Frappuccino.jpg);
+          clip-path: circle(100% at 0% 50%);
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          transition: transform 0.3s ease-in-out;
+        }
+        #Javachip_Frappuccino:hover {
+          transform: scale(1.1);
+        }
+        #Caramel_Frappuccino {
+          background-image: url(Caramel_Frappuccino.jpg);
+          clip-path: circle(100% at 0% 50%);
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          transition: transform 0.3s ease-in-out;
+        }
+        #Caramel_Frappuccino:hover {
+          transform: scale(1.1);
+        }
+        #Avocado_Frappuccino {
+          background-image: url(Avocado_Frappuccino.jpg);
+          clip-path: circle(100% at 0% 50%);
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          transition: transform 0.3s ease-in-out;
+        }
+        #Avocado_Frappuccino:hover {
+          transform: scale(1.1);
+        }
+        #Avocado_Frappuccino {
+          background-image: url(Avocado_Frappuccino.jpg);
+          clip-path: circle(100% at 0% 50%);
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          transition: transform 0.3s ease-in-out;
+        }
+        #Avocado_Frappuccino:hover {
+          transform: scale(1.1);
+        }
+        #Mango_blended {
+          background-image: url(mango_blended.jpg);
+          clip-path: circle(100% at 0% 50%);
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          transition: transform 0.3s ease-in-out;
+        }
+        #Mango_blended:hover {
+          transform: scale(1.1);
+        }
+        #Mango_Banana_blended {
+          background-image: url(mango&banana_blended.jpg);
+          clip-path: circle(100% at 0% 50%);
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          transition: transform 0.3s ease-in-out;
+        }
+        #Mango_Banana_blended:hover {
+          transform: scale(1.1);
+        }
+        #Strawberry_blended {
+          background-image: url(strawberry_blended.jpg);
+          clip-path: circle(100% at 0% 50%);
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          transition: transform 0.3s ease-in-out;
+        }
+        #Strawberry_blended:hover {
+          transform: scale(1.1);
+        }
+        .Tea {
+          font-size: 25px;
+        }
+        .sec3 {
+          background-color: #801b18;
+          color: white;
+          margin: 5px 0px;
+          padding: 1Q 1px;
+        }
+        .article3 {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          margin-top: 20px;
+        }
+        .article3 img {
+          width: 300px;
+          height: 300px;
+          border-radius: 50%;
+        }
+        .desc2 {
+          flex: 1;
+          background-color: #801b18;
+          color: white;
+          padding: 20px;
+          margin-left: 20px;
+          margin-right: 50px;
+        }
+        .desc2 h2 {
+          text-align: left;
+          font-size: 2em;
+          margin-bottom: 20px;
+        }
+        #leftHalfGrapefruit {
+          left: 0;
+          background-image: url(ice_grapefruit_honey_black_Tea.jpg);
+          clip-path: circle(100% at 0% 50%);
+        }
+        #rightHalfGrapefruit {
+          right: 0;
+          background-image: url(hot_grapefruit_honey_black_Tea.jpg);
+          clip-path: circle(100% at 100% 50%);
+        }
+        #leftHalfHibiscus {
+          left: 0;
+          background-image: url(ice_HibiscusTea.jpg);
+          clip-path: circle(100% at 0% 50%);
+        }
+        #rightHalfHibiscus {
+          right: 0;
+          background-image: url(hot_HibiscusTea.jpg);
+          clip-path: circle(100% at 100% 50%);
+        }
+        #leftHalfGreentea {
+          left: 0;
+          background-image: url(ice_MalchaLatte.jpg);
+          clip-path: circle(100% at 0% 50%);
+        }
+        #rightHalfGreentea {
+          right: 0;
+          background-image: url(hot_MalchaLatte.jpg);
+          clip-path: circle(100% at 100% 50%);
+        }
+        .dessert {
+          font-size: 25px;
+        }
+        .sec4 {
+          background-color: #63453d;
+          color: white;
+          margin: 5px 0px;
+          padding: 1Q 1px;
+        }
+        .article4 {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          margin-top: 20px;
+        }
+        .article4 img {
+          width: 300px;
+          height: 300px;
+          border-radius: 50%;
+        }
+        .desc3 {
+          flex: 1;
+          background-color: #63453d;
+          color: white;
+          padding: 20px;
+          margin-left: 20px;
+          margin-right: 50px;
+        }
+        .desc3 h2 {
+          text-align: left;
+          font-size: 2em;
+          margin-bottom: 20px;
+        }
+        #heart_pie {
+          background-image: url(heart_pie.jpg);
+          clip-path: circle(100% at 0% 50%);
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          transition: transform 0.3s ease-in-out;
+        }
+        #heart_pie:hover {
+          transform: scale(1.1);
+        }
+        #cheese_ball {
+          background-image: url(cheese_ball.jpg);
+          clip-path: circle(100% at 0% 50%);
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          transition: transform 0.3s ease-in-out;
+        }
+        #cheese_ball:hover {
+          transform: scale(1.1);
+        }
+        #chocolate_bread {
+          background-image: url(chocolate_bread.jpg);
+          clip-path: circle(100% at 0% 50%);
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          transition: transform 0.3s ease-in-out; /
+        }
+        #chocolate_bread:hover {
+          transform: scale(1.1);
+        }
+        #gana_cake {
+          background-image: url(gana_cake.jpg);
+          clip-path: circle(100% at 0% 50%);
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          transition: transform 0.3s ease-in-out; /
+        }
+        #gana_cake:hover {
+          transform: scale(1.1);
+        }
+        #chococream_cake {
+          background-image: url(chococream_cake.jpg);
+          clip-path: circle(100% at 0% 50%);
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          transition: transform 0.3s ease-in-out; /
+        }
+        #chococream_cake:hover {
+          transform: scale(1.1);
+        }
+        #cheese_cake {
+          background-image: url(cheese_cake.jpg);
+          clip-path: circle(100% at 0% 50%);
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          transition: transform 0.3s ease-in-out; /
+        }
+        #cheese_cake:hover {
+          transform: scale(1.1);
+        }
+        * {box-sizing:border-box}
+
+        .slideshow-container {
+        max-width: 800px;
+        position: relative;
+        margin: auto;
+        border: 5px solid black; /* 검정 굵은 실선 */
+        border-radius: 25px; /* 모서리 둥글게 */
+        background-color: #f2f2f2; /* 배경색 */
+        padding: 50px; /* 내부 패딩 */
+        box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+      }
+
+      .slides {
+        display: none;
+        text-align: center; /* 텍스트 중앙 정렬 */
+      }
+
+      .text {
+        color: #333;
+        font-size: 20px;
+        padding: 20px 0; /* 위 아래 패딩 */
+        text-align: center; /* 글씨 중앙 정렬 */
+      }
+
+      /* dot을 담는 컨테이너 */
+      .dot-container {
+        text-align: center;
+        padding: 20px 0; /* 위 아래 패딩 */
+      }
+
+      /* 슬라이드 페이지 매김 */
+      .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        cursor: pointer; /* 마우스 커서 포인터로 변경 */
+      }
+
+      .active {
+        background-color: #717171;
+      }
+
+      .slide_circle {
+        width: 200px; /* 원 크기 */
+        height: 200px;
+        border-radius: 50%; /* 원 모양 */
+        margin: 0 auto; /* 원 중앙 정렬 */
+        overflow: hidden; /* 이미지가 원을 넘어가면 잘라냄 */
+        display: flex; /* Flexbox 사용 */
+        justify-content: center; /* 가로 중앙 정렬 */
+        align-items: center; /* 세로 중앙 정렬 */
+        }
+         /* 폼 스타일링 */
+        form {
+          max-width: 400px;
+          margin: 0 auto;
+          font-family: Arial, sans-serif;
+        }
+
+        /* 입력 필드 스타일링 */
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        textarea {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          font-size: 16px;
+        }
+
+        /* 제출 버튼 스타일링 */
+        input[type="submit"] {
+          background-color: #4CAF50;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 16px;
+        }
+
+        /* 제출 버튼 호버 효과 */
+        input[type="submit"]:hover {
+          background-color: #45a049;
+        }
+        textarea{
+          color: lightgrey;
+        }
+        #myBtn {
+        display: none; /* 기본적으로 버튼은 표시되지 않습니다 */
+        position: fixed; /* 고정 위치 */
+        bottom: 20px; /* 페이지 하단에서 20px 떨어진 위치 */
+        right: 30px; /* 페이지 우측에서 30px 떨어진 위치 */
+        z-index: 99; /* 다른 요소 위에 표시 */
+        font-size: 18px; /* 글꼴 크기 */
+        border: none; /* 테두리 없음 */
+        outline: none; /* 외곽선 없음 */
+        background-color: #8b4513; /* 배경색 */
+        color: white; /* 글꼴 색 */
+        cursor: pointer; /* 마우스 오버 시 포인터로 표시 */
+        padding: 15px; /* 패딩 */
+        border-radius: 4px; /* 둥근 모서리 */
+        box-shadow: gray 2px 2px;
+      }
+      @media all and (max-width: 600px){
+        .nav{
+          flex-direction: column;
+        }
+        .article1, .article2, .article3, .article4 {
+          display: flex;
+          flex-direction: column;
+        }
+        .circle {
+          order: 1;
+        }
+        .desc, .desc1, .desc2, .desc3 {
+          order: 2;
+        }
+        p{
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header"><h1>Cafe Menu</h1></div>
+    </header>
+    <nav>
+      <div class="nav">
+        <a href="#coffee">Coffee</a>
+        <a href="#Frappuccino_Blended">Frappuccino&Blended</a>
+        <a href="#Tea">Tea</a>
+        <a href="#dessert">Dessert</a>
+      </div>
+    </nav>
+    <section>
+      <article>
+        <div class="blank"></div>
+        <div class="sec1">
+          <h1 class="coffee" id="coffee">&nbspCoffee</h1>
+          <p>
+            &nbsp원두에서 추출한 에스프레소를 기본으로 물이나 우유 따위를
+            혼합하여 마시는 음료이다&nbsp&nbsp
+          </p>
+        </div>
+        <hr />
+        <div class="article1">
+          <div class="circle">
+            <div class="half" id="leftHalf"></div>
+            <div class="half" id="rightHalf"></div>
+          </div>
+          <div class="desc">
+            <h2>아메리카노</h2>
+            <p>
+              진한 에스프레소에 정수물을 더하여 깔끔하고 강렬한 에스프레소를
+              가장 부드럽게 즐길 수 있는 커피
+            </p>
+          </div>
+        </div>
+        <div class="article1">
+          <div class="desc">
+            <h2>카페라떼</h2>
+            <p>
+              풍부하고 진한 에스프레소가 신선한 우유를 만나 부드러워진 커피 위에
+              우유 거품을 살짝 얹은 대표적인 커피 라떼
+            </p>
+          </div>
+          <div class="circle">
+            <div class="half" id="leftHalfLatte"></div>
+            <div class="half" id="rightHalfLatte"></div>
+          </div>
+        </div>
+        <div class="article1">
+          <div class="circle">
+            <div class="half" id="leftHalfcappuccino"></div>
+            <div class="half" id="rightHalfcappuccino"></div>
+          </div>
+          <div class="desc">
+            <h2>카푸치노</h2>
+            <p>
+              풍부하고 진한 에스프레소에 따뜻한 우유와 벨벳 같은 우유 거품이 1:1
+              비율로 어우러져 마무리된 커피 음료
+            </p>
+          </div>
+        </div>
+        <div class="article1">
+          <div class="desc">
+            <h2>카페모카</h2>
+            <p>
+              진한 초콜릿 모카 시럽과 풍부한 에스프레소를 스팀 밀크와 섞어
+              휘핑크림으로 마무리한 음료로 진한 에스프레소와 초콜릿 맛이
+              어우러진 커피
+            </p>
+          </div>
+          <div class="circle">
+            <div class="half" id="leftHalfcafemoca"></div>
+            <div class="half" id="rightHalfcafemoca"></div>
+          </div>
+        </div>
+        <div class="article1">
+          <div class="circle">
+            <div class="half" id="leftHalfcaramelmacchiato"></div>
+            <div class="half" id="rightHalfcaramelmacchiato"></div>
+          </div>
+          <div class="desc">
+            <h2>카라멜 마키아또</h2>
+            <p>
+              향긋한 바닐라 시럽과 우유 위에 풍성한 우유 거품을 얹고 점을 찍듯이
+              에스프레소를 부은 후 벌집 모양으로 카라멜 드리즐을 올린 달콤한
+              커피 음료
+            </p>
+          </div>
+        </div>
+        <div class="article1">
+          <div class="desc">
+            <h2>돌체라떼</h2>
+            <p>
+              다른 커피 음료보다 더욱 깊은 커피의 맛과 향에 깔끔한 무지방 우유와
+              부드러운 돌체 시럽이 들어간 음료로 달콤하고 진한 커피 라떼
+            </p>
+          </div>
+          <div class="circle">
+            <div class="half" id="leftHalfdolcelatte"></div>
+            <div class="half" id="rightHalfdolcelatte"></div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="sec2">
+          <h1 class="Frappuccino_Blended" id="Frappuccino_Blended">
+            &nbspFrappuccino&Blended
+          </h1>
+          <p>&nbsp얼음과 함께 갈아서 만드는 여러가지 아이스 음료&nbsp</p>
+          <ul>
+            <li><i>Frappuccino:커피를 얼음과 함께 갈아서 만드는 음료</i></li>
+            <li><i>Blended:주스와 얼음을 갈아서 만드는 음료</i></li>
+          </ul>
+        </div>
+        <hr />
+        <div><h2>Frappuccino</h2></div>
+        <hr />
+        <div class="article2">
+          <div class="circle">
+            <div id="Javachip_Frappuccino"></div>
+          </div>
+          <div class="desc1">
+            <h2>자바칩 프라프치노</h2>
+            <p>
+              커피, 모카 소스, 진한 초콜릿 칩이 입안 가득 느껴지는 프라푸치노
+            </p>
+          </div>
+        </div>
+        <div class="article2">
+          <div class="desc1">
+            <h2>카라멜 프라푸치노</h2>
+            <p>카라멜과 커피가 어우러진 프라푸치노</p>
+          </div>
+          <div class="circle">
+            <div id="Caramel_Frappuccino"></div>
+          </div>
+        </div>
+        <div class="article2">
+          <div class="circle">
+            <div id="Avocado_Frappuccino"></div>
+          </div>
+          <div class="desc1">
+            <h2>피스타치오 아보카도 초콜릿 프라푸치노</h2>
+            <p>
+              고소한 피스타치오와 달콤한 초콜릿, 아보카도 텍스쳐의 완벽한 조화.
+              오트를 사용해 더 맛있는 프라푸치노
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div><h2>Blended</h2></div>
+        <hr />
+        <div class="article2">
+          <div class="desc1">
+            <h2>망고 패션 티 블렌디드</h2>
+            <p>
+              망고 패션 프루트 주스와 패션 탱고 티가 상큼하게 어우러진 과일
+              블렌디드
+            </p>
+          </div>
+          <div class="circle">
+            <div id="Mango_blended"></div>
+          </div>
+        </div>
+        <div class="article2">
+          <div class="circle">
+            <div id="Mango_Banana_blended"></div>
+          </div>
+          <div class="desc1">
+            <h2>망고 바나나 블렌디드</h2>
+            <p>
+              달콤한 망고 패션 프루트 주스에 바나나 1개가 통째로 들어간 신선한
+              블렌디드
+            </p>
+          </div>
+        </div>
+        <div class="article2">
+          <div class="desc1">
+            <h2>딸기 딜라이트 요거트 블렌디드</h2>
+            <p>
+              유산균이 살아있는 리얼 요거트와 풍성한 딸기 과육이 더욱 상큼하게
+              어우러진 과일 요거트 블렌디드
+            </p>
+          </div>
+          <div class="circle">
+            <div id="Strawberry_blended"></div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="blank"></div>
+        <div class="sec3">
+          <h1 class="Tea" id="Tea">&nbspCoffee</h1>
+          <p>
+            &nbsp원두에서 추출한 에스프레소를 기본으로 물이나 우유 따위를
+            혼합하여 마시는 음료이다&nbsp&nbsp
+          </p>
+        </div>
+        <hr />
+        <div class="article3">
+          <div class="circle">
+            <div class="half" id="leftHalfGrapefruit"></div>
+            <div class="half" id="rightHalfGrapefruit"></div>
+          </div>
+          <div class="desc2">
+            <h2>자몽 허니 블랙 티</h2>
+            <p>
+              새콤한 자몽과 달콤한 꿀이 깊고 그윽한 풍미의 티바나 블랙 티의 조화
+            </p>
+          </div>
+        </div>
+        <div class="article3">
+          <div class="desc2">
+            <h2>히비스커스 블렌드 티</h2>
+            <p>
+              히비스커스, 사과, 파파야, 망고, 레몬그라스 등이 블렌딩된 상큼한
+              허브 티
+            </p>
+          </div>
+          <div class="circle">
+            <div class="half" id="leftHalfHibiscus"></div>
+            <div class="half" id="rightHalfHibiscus"></div>
+          </div>
+        </div>
+        <div class="article3">
+          <div class="circle">
+            <div class="half" id="leftHalfGreentea"></div>
+            <div class="half" id="rightHalfGreentea"></div>
+          </div>
+          <div class="desc2">
+            <h2>제주 유기농 말차 라떼</h2>
+            <p>
+              차광재배한 어린 녹찻잎을 곱게 갈아 깊고 진한 말차 본연의 맛과 향을
+              부드럽게 즐길 수 있는 제주 유기농 말차로 만든 라떼
+            </p>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="sec4">
+          <h1 class="dessert" id="dessert">&nbspDessert</h1>
+          <p>&nbsp식사후 음료와 함꼐 즐기는 간단한 음식&nbsp</p>
+        </div>
+
+        <div class="article4">
+          <div class="circle">
+            <div id="heart_pie"></div>
+          </div>
+          <div class="desc3">
+            <h2>하트 파이</h2>
+            <p>하트 모양의 바삭한 파이입니다.</p>
+          </div>
+        </div>
+        <div class="article4">
+          <div class="desc3">
+            <h2>치즈 꿀 볼</h2>
+            <p>
+              네 가지의 다양한 치즈가 들어가 짭짤한 맛과 달콤한 아카시아 꿀이
+              더해져 단짠의 조화가 매력적인 브레드
+            </p>
+          </div>
+          <div class="circle">
+            <div id="cheese_ball"></div>
+          </div>
+        </div>
+        <div class="article4">
+          <div class="circle">
+            <div id="chocolate_bread"></div>
+          </div>
+          <div class="desc3">
+            <h2>초콜릿 월넛 브레드</h2>
+            <p>
+              촉촉한 초콜릿 번에 진한 초콜릿 필링을 채운 뒤, 호두와 초콜릿을
+              코팅하여 달달함과 고소함을 더한 비건 브레드입니다.
+            </p>
+          </div>
+        </div>
+        <div class="article4">
+          <div class="desc3">
+            <h2>7 레이어 가나슈 케이크</h2>
+            <p>
+              초콜릿, 가나슈, 모카로 만든 시트와 크림이 7개의 층을 이루어
+              모양부터 매력적인 케이크입니다.
+            </p>
+          </div>
+          <div class="circle">
+            <div id="gana_cake"></div>
+          </div>
+        </div>
+        <div class="article4">
+          <div class="circle">
+            <div id="chococream_cake"></div>
+          </div>
+          <div class="desc3">
+            <h2>초콜릿 생크림 케이크</h2>
+            <p>
+              달콤한 초콜릿 케이크 시트에 진한 가나슈 생크림을 넣고 측면에 다크
+              초콜릿을 듬뿍 토핑한 달콤하고 촉촉한 초콜릿 케이크입니다.
+            </p>
+          </div>
+        </div>
+        <div class="article4">
+          <div class="desc3">
+            <h2>클라우드 치즈 케이크</h2>
+            <p>
+              사워크림의 상큼함과 진한 치즈의 맛을 동시에 맛볼 수 있는
+              케이크입니다.
+            </p>
+          </div>
+          <div class="circle">
+            <div id="cheese_cake"></div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <hr />
+    <footer>
+      <h1>이달의 추천</h1>
+      <div class="slideshow-container">
+        <div class="slides fade">
+          <div class="slide_circle"><img src="strawberry_blended.jpg" /></div>
+          <div class="text">
+            <h4>딸기 딜라이트 요거트 블렌디드</h4>
+          </div>
+        </div>
+
+        <div class="slides fade">
+          <div class="slide_circle"><img src="hot_cappuccino.jpg" /></div>
+          <div class="text">
+            <h4>카푸치노</h4>
+          </div>
+        </div>
+
+        <div class="slides fade">
+          <div class="slide_circle"><img src="mango_blended.jpg" /></div>
+          <div class="text">
+            <h4>망고 패션 티 블렌디드</h4>
+          </div>
+        </div>
+
+        <div class="slides fade">
+          <div class="slide_circle">
+            <img src="ice_grapefruit_honey_black_Tea.jpg" />
+          </div>
+          <div class="text">
+            <h4>자몽 허니 블랙 티</h4>
+          </div>
+        </div>
+
+        <div class="slides fade">
+          <div class="slide_circle"><img src="hot_MalchaLatte.jpg" /></div>
+          <div class="text">
+            <h4>제주 유기농 말차 라떼</h4>
+          </div>
+        </div>
+        <div class="dot-container">
+          <span class="dot active" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+      </div>
+      <hr />
+      <form id="requestForm">
+        <div>
+          <label for="name">이름:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div>
+          <label for="phone">전화 번호:</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+        <div>
+          <label for="email">이메일:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div>
+          <label for="requirements">요구사항:</label><br />
+          <textarea
+            id="requirements"
+            name="requirements"
+            rows="4"
+            cols="50"
+            required
+          >
+Ex&#41; 화이트 초콜릿 모카 메뉴를 추가해 주세요</textarea
+          >
+        </div>
+        <div>
+          <input type="submit" value="제출" />
+        </div>
+      </form>
+    </footer>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">top</button>
+    <script>
+      window.addEventListener("scroll", function () {
+        var nav = document.querySelector(".nav");
+        var header = document.querySelector("header");
+        var headerHeight = header.clientHeight;
+
+        if (window.pageYOffset > headerHeight) {
+          nav.classList.add("sticky");
+        } else {
+          nav.classList.remove("sticky");
+        }
+      });
+      const leftHalf = document.getElementById("leftHalf");
+      const rightHalf = document.getElementById("rightHalf");
+      const leftHalfLatte = document.getElementById("leftHalfLatte");
+      const rightHalfLatte = document.getElementById("rightHalfLatte");
+      const leftHalfcappuccino = document.getElementById("leftHalfcappuccino");
+      const rightHalfcappuccino = document.getElementById(
+        "rightHalfcappuccino"
+      );
+      const leftHalfcafemoca = document.getElementById("leftHalfcafemoca");
+      const rightHalfcafemoca = document.getElementById("rightHalfcafemoca");
+      const leftHalfcaramelmacchiato = document.getElementById(
+        "leftHalfcaramelmacchiato"
+      );
+      const rightHalfcaramelmacchiato = document.getElementById(
+        "rightHalfcaramelmacchiato"
+      );
+      const leftHalfdolcelatte = document.getElementById("leftHalfdolcelatte");
+      const rightHalfdolcelatte = document.getElementById(
+        "rightHalfdolcelatte"
+      );
+
+      const leftHalfGrapefruit = document.getElementById("leftHalfGrapefruit");
+      const rightHalfGrapefruit = document.getElementById(
+        "rightHalfGrapefruit"
+      );
+      const leftHalfHibiscus = document.getElementById("leftHalfHibiscus");
+      const rightHalfHibiscus = document.getElementById("rightHalfHibiscus");
+      const leftHalfGreentea = document.getElementById("leftHalfGreentea");
+      const rightHalfGreentea = document.getElementById("rightHalfGreentea");
+      const handleMouseOver = (expandElement, shrinkElement) => {
+        expandElement.style.clipPath = "circle(100% at 50% 50%)";
+        shrinkElement.style.clipPath = "circle(0% at 100% 50%)";
+        expandElement.style.width = "100%";
+        shrinkElement.style.width = "0%";
+        expandElement.style.backgroundSize = "100% 100%";
+        expandElement.style.backgroundPosition = "center";
+      };
+
+      const handleMouseLeave = (expandElement, shrinkElement) => {
+        expandElement.style.clipPath = "circle(100% at 0% 50%)";
+        shrinkElement.style.clipPath = "circle(100% at 100% 50%)";
+        expandElement.style.width = "50%";
+        shrinkElement.style.width = "50%";
+        expandElement.style.backgroundSize = "200% 100%";
+        shrinkElement.style.backgroundSize = "200% 100%";
+        expandElement.style.backgroundPosition = "center";
+        shrinkElement.style.backgroundPosition = "center";
+      };
+
+      leftHalf.addEventListener("mouseover", () =>
+        handleMouseOver(leftHalf, rightHalf)
+      );
+      rightHalf.addEventListener("mouseover", () =>
+        handleMouseOver(rightHalf, leftHalf)
+      );
+      leftHalf.addEventListener("mouseleave", () =>
+        handleMouseLeave(leftHalf, rightHalf)
+      );
+      rightHalf.addEventListener("mouseleave", () =>
+        handleMouseLeave(rightHalf, leftHalf)
+      );
+
+      leftHalfLatte.addEventListener("mouseover", () =>
+        handleMouseOver(leftHalfLatte, rightHalfLatte)
+      );
+      rightHalfLatte.addEventListener("mouseover", () =>
+        handleMouseOver(rightHalfLatte, leftHalfLatte)
+      );
+      leftHalfLatte.addEventListener("mouseleave", () =>
+        handleMouseLeave(leftHalfLatte, rightHalfLatte)
+      );
+      rightHalfLatte.addEventListener("mouseleave", () =>
+        handleMouseLeave(rightHalfLatte, leftHalfLatte)
+      );
+
+      leftHalfcappuccino.addEventListener("mouseover", () =>
+        handleMouseOver(leftHalfcappuccino, rightHalfcappuccino)
+      );
+      rightHalfcappuccino.addEventListener("mouseover", () =>
+        handleMouseOver(rightHalfcappuccino, leftHalfcappuccino)
+      );
+      leftHalfcappuccino.addEventListener("mouseleave", () =>
+        handleMouseLeave(leftHalfcappuccino, rightHalfcappuccino)
+      );
+      rightHalfcappuccino.addEventListener("mouseleave", () =>
+        handleMouseLeave(rightHalfcappuccino, leftHalfcappuccino)
+      );
+
+      leftHalfcafemoca.addEventListener("mouseover", () =>
+        handleMouseOver(leftHalfcafemoca, rightHalfcafemoca)
+      );
+      rightHalfcafemoca.addEventListener("mouseover", () =>
+        handleMouseOver(rightHalfcafemoca, leftHalfcafemoca)
+      );
+      leftHalfcafemoca.addEventListener("mouseleave", () =>
+        handleMouseLeave(leftHalfcafemoca, rightHalfcafemoca)
+      );
+      rightHalfcafemoca.addEventListener("mouseleave", () =>
+        handleMouseLeave(rightHalfcafemoca, leftHalfcafemoca)
+      );
+
+      leftHalfcaramelmacchiato.addEventListener("mouseover", () =>
+        handleMouseOver(leftHalfcaramelmacchiato, rightHalfcaramelmacchiato)
+      );
+      rightHalfcaramelmacchiato.addEventListener("mouseover", () =>
+        handleMouseOver(rightHalfcaramelmacchiato, leftHalfcaramelmacchiato)
+      );
+      leftHalfcaramelmacchiato.addEventListener("mouseleave", () =>
+        handleMouseLeave(leftHalfcaramelmacchiato, rightHalfcaramelmacchiato)
+      );
+      rightHalfcaramelmacchiato.addEventListener("mouseleave", () =>
+        handleMouseLeave(rightHalfcaramelmacchiato, leftHalfcaramelmacchiato)
+      );
+
+      leftHalfdolcelatte.addEventListener("mouseover", () =>
+        handleMouseOver(leftHalfdolcelatte, rightHalfdolcelatte)
+      );
+      rightHalfdolcelatte.addEventListener("mouseover", () =>
+        handleMouseOver(rightHalfdolcelatte, leftHalfdolcelatte)
+      );
+      leftHalfdolcelatte.addEventListener("mouseleave", () =>
+        handleMouseLeave(leftHalfdolcelatte, rightHalfdolcelatte)
+      );
+      rightHalfdolcelatte.addEventListener("mouseleave", () =>
+        handleMouseLeave(rightHalfdolcelatte, leftHalfdolcelatte)
+      );
+
+      leftHalfGrapefruit.addEventListener("mouseover", () =>
+        handleMouseOver(leftHalfGrapefruit, rightHalfGrapefruit)
+      );
+      rightHalfGrapefruit.addEventListener("mouseover", () =>
+        handleMouseOver(rightHalfGrapefruit, leftHalfGrapefruit)
+      );
+      leftHalfGrapefruit.addEventListener("mouseleave", () =>
+        handleMouseLeave(leftHalfGrapefruit, rightHalfGrapefruit)
+      );
+      rightHalfGrapefruit.addEventListener("mouseleave", () =>
+        handleMouseLeave(rightHalfGrapefruit, leftHalfGrapefruit)
+      );
+
+      leftHalfHibiscus.addEventListener("mouseover", () =>
+        handleMouseOver(leftHalfHibiscus, rightHalfHibiscus)
+      );
+      rightHalfHibiscus.addEventListener("mouseover", () =>
+        handleMouseOver(rightHalfHibiscus, leftHalfHibiscus)
+      );
+      leftHalfHibiscus.addEventListener("mouseleave", () =>
+        handleMouseLeave(leftHalfHibiscus, rightHalfHibiscus)
+      );
+      rightHalfHibiscus.addEventListener("mouseleave", () =>
+        handleMouseLeave(rightHalfHibiscus, leftHalfHibiscus)
+      );
+
+      leftHalfGreentea.addEventListener("mouseover", () =>
+        handleMouseOver(leftHalfGreentea, rightHalfGreentea)
+      );
+      rightHalfGreentea.addEventListener("mouseover", () =>
+        handleMouseOver(rightHalfGreentea, leftHalfGreentea)
+      );
+      leftHalfGreentea.addEventListener("mouseleave", () =>
+        handleMouseLeave(leftHalfGreentea, rightHalfGreentea)
+      );
+      rightHalfGreentea.addEventListener("mouseleave", () =>
+        handleMouseLeave(rightHalfGreentea, leftHalfGreentea)
+      );
+
+      var slideIndex = 0;
+      var dots = document.getElementsByClassName("dot");
+      var slides = document.getElementsByClassName("slides");
+      var slideInterval;
+
+      function showSlides() {
+        var i;
+
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+
+        slideInterval = setTimeout(showSlides, 2000); // setTimeout의 리턴 값을 slideInterval에 저장
+      }
+
+      showSlides();
+
+      function currentSlide(n) {
+        clearTimeout(slideInterval); // setTimeout을 취소
+
+        for (var i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+
+        for (var i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        slideIndex = n;
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+
+        slideInterval = setTimeout(showSlides, 2000); // 다시 setTimeout을 설정
+      }
+
+      for (var i = 0; i < dots.length; i++) {
+        dots[i].addEventListener("click", function () {
+          var dotIndex = Array.from(dots).indexOf(this) + 1;
+          currentSlide(dotIndex);
+        });
+      }
+
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          document.getElementById("myBtn").style.display = "block";
+        } else {
+          document.getElementById("myBtn").style.display = "none";
+        }
+      }
+
+      // 사용자가 버튼을 클릭하면 페이지 상단으로 이동
+      function topFunction() {
+        document.body.scrollTop = 0; // Safari 브라우저를 위한 설정
+        document.documentElement.scrollTop = 0; // 다른 브라우저를 위한 설정
+      }
+    </script>
+  </body>
+</html>
