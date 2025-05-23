@@ -1,0 +1,558 @@
+.header {
+    background-image: url(img/cafe.jpg);
+    text-align: center;
+    padding: 20px 0;
+    color: black;
+    font-size: 2em;
+  }
+  .nav {
+    background-color: #8b4513;
+    overflow: hidden;
+    z-index: 999;
+    box-shadow: 5px 5px 10px gray;
+    display: flex;
+  }
+  .nav.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  .nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.5em;
+  }
+  .nav a:hover {
+    background-color: white;
+    color: black;
+  }
+  .coffee {
+    font-size: 25px;
+  }
+  .sec1 {
+    background-color: #8b4513;
+    color: white;
+    margin: 5px 0px;
+    padding: 1Q 1px;
+  }
+  .article1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .article1 img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+  }
+  .desc {
+    flex: 1;
+    background-color: #8b4513;
+    color: white;
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 50px;
+  }
+  .desc h2 {
+    text-align: left;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  .circle {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .half {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    transition: width 0.5s, background-size 0.5s, background-position 0.5s;
+    background-size: 200% 100%;
+    background-position: center;
+  }
+  #leftHalf {
+    left: 0;
+    background-image: url(img/ice_americano.jpg);
+    clip-path: circle(100% at 0% 50%);
+  }
+  #rightHalf {
+    right: 0;
+    background-image: url(img/hot_americano.jpg);
+    clip-path: circle(100% at 100% 50%);
+  }
+  #leftHalfLatte {
+    left: 0;
+    background-image: url(img/ice_cafelatte.jpg);
+    clip-path: circle(100% at 0% 50%);
+  }
+  #rightHalfLatte {
+    right: 0;
+    background-image: url(img/hot_cafelatte.jpg);
+    clip-path: circle(100% at 100% 50%);
+  }
+  #leftHalfcappuccino {
+    left: 0;
+    background-image: url(img/ice_cappuccino.jpg);
+    clip-path: circle(100% at 0% 50%);
+  }
+  #rightHalfcappuccino {
+    right: 0;
+    background-image: url(img/hot_cappuccino.jpg);
+    clip-path: circle(100% at 100% 50%);
+  }
+  #leftHalfcafemoca {
+    left: 0;
+    background-image: url(img/ice_cafe_mocha.jpg);
+    clip-path: circle(100% at 0% 50%);
+  }
+  #rightHalfcafemoca {
+    right: 0;
+    background-image: url(img/hot_cafe_mocha.jpg);
+    clip-path: circle(100% at 100% 50%);
+  }
+  #leftHalfcaramelmacchiato {
+    left: 0;
+    background-image: url(img/ice_caramel_macchiato.jpg);
+    clip-path: circle(100% at 0% 50%);
+  }
+  #rightHalfcaramelmacchiato {
+    right: 0;
+    background-image: url(img/hot_caramel_macchiato.jpg);
+    clip-path: circle(100% at 100% 50%);
+  }
+  #leftHalfdolcelatte {
+    left: 0;
+    background-image: url(img/ice_dolcelatte.jpg);
+    clip-path: circle(100% at 0% 50%);
+  }
+  #rightHalfdolcelatte {
+    right: 0;
+    background-image: url(img/hot_dolcelatte.jpg);
+    clip-path: circle(100% at 100% 50%);
+  }
+  .Frappuccino_Blended {
+    font-size: 25px;
+  }
+  .sec2 {
+    background-color: #1c3d36;
+    color: white;
+    margin: 5px 0px;
+    padding: 1Q 1px;
+  }
+  .blank {
+    padding: 2px;
+  }
+  .article2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .article2 img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+  }
+  .desc1 {
+    flex: 1;
+    background-color: #1c3d36;
+    color: white;
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 50px;
+  }
+  .desc1 h2 {
+    text-align: left;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  #Javachip_Frappuccino {
+    background-image: url(img/Javachip_Frappuccino.jpg);
+    clip-path: circle(100% at 0% 50%);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  #Javachip_Frappuccino:hover {
+    transform: scale(1.1);
+  }
+  #Caramel_Frappuccino {
+    background-image: url(img/Caramel_Frappuccino.jpg);
+    clip-path: circle(100% at 0% 50%);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  #Caramel_Frappuccino:hover {
+    transform: scale(1.1);
+  }
+  #Avocado_Frappuccino {
+    background-image: url(img/Avocado_Frappuccino.jpg);
+    clip-path: circle(100% at 0% 50%);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  #Avocado_Frappuccino:hover {
+    transform: scale(1.1);
+  }
+  #Avocado_Frappuccino {
+    background-image: url(img/Avocado_Frappuccino.jpg);
+    clip-path: circle(100% at 0% 50%);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  #Avocado_Frappuccino:hover {
+    transform: scale(1.1);
+  }
+  #Mango_blended {
+    background-image: url(img/mango_blended.jpg);
+    clip-path: circle(100% at 0% 50%);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  #Mango_blended:hover {
+    transform: scale(1.1);
+  }
+  #Mango_Banana_blended {
+    background-image: url(img/mango&banana_blended.jpg);
+    clip-path: circle(100% at 0% 50%);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  #Mango_Banana_blended:hover {
+    transform: scale(1.1);
+  }
+  #Strawberry_blended {
+    background-image: url(img/strawberry_blended.jpg);
+    clip-path: circle(100% at 0% 50%);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  #Strawberry_blended:hover {
+    transform: scale(1.1);
+  }
+  .Tea {
+    font-size: 25px;
+  }
+  .sec3 {
+    background-color: #801b18;
+    color: white;
+    margin: 5px 0px;
+    padding: 1Q 1px;
+  }
+  .article3 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .article3 img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+  }
+  .desc2 {
+    flex: 1;
+    background-color: #801b18;
+    color: white;
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 50px;
+  }
+  .desc2 h2 {
+    text-align: left;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  #leftHalfGrapefruit {
+    left: 0;
+    background-image: url(img/ice_grapefruit_honey_black_Tea.jpg);
+    clip-path: circle(100% at 0% 50%);
+  }
+  #rightHalfGrapefruit {
+    right: 0;
+    background-image: url(img/hot_grapefruit_honey_black_Tea.jpg);
+    clip-path: circle(100% at 100% 50%);
+  }
+  #leftHalfHibiscus {
+    left: 0;
+    background-image: url(img/ice_HibiscusTea.jpg);
+    clip-path: circle(100% at 0% 50%);
+  }
+  #rightHalfHibiscus {
+    right: 0;
+    background-image: url(img/hot_HibiscusTea.jpg);
+    clip-path: circle(100% at 100% 50%);
+  }
+  #leftHalfGreentea {
+    left: 0;
+    background-image: url(img/ice_MalchaLatte.jpg);
+    clip-path: circle(100% at 0% 50%);
+  }
+  #rightHalfGreentea {
+    right: 0;
+    background-image: url(img/hot_MalchaLatte.jpg);
+    clip-path: circle(100% at 100% 50%);
+  }
+  .dessert {
+    font-size: 25px;
+  }
+  .sec4 {
+    background-color: #63453d;
+    color: white;
+    margin: 5px 0px;
+    padding: 1Q 1px;
+  }
+  .article4 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .article4 img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+  }
+  .desc3 {
+    flex: 1;
+    background-color: #63453d;
+    color: white;
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 50px;
+  }
+  .desc3 h2 {
+    text-align: left;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  #heart_pie {
+    background-image: url(img/heart_pie.jpg);
+    clip-path: circle(100% at 0% 50%);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  #heart_pie:hover {
+    transform: scale(1.1);
+  }
+  #cheese_ball {
+    background-image: url(img/cheese_ball.jpg);
+    clip-path: circle(100% at 0% 50%);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  #cheese_ball:hover {
+    transform: scale(1.1);
+  }
+  #chocolate_bread {
+    background-image: url(img/chocolate_bread.jpg);
+    clip-path: circle(100% at 0% 50%);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out; /
+  }
+  #chocolate_bread:hover {
+    transform: scale(1.1);
+  }
+  #gana_cake {
+    background-image: url(img/gana_cake.jpg);
+    clip-path: circle(100% at 0% 50%);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out; /
+  }
+  #gana_cake:hover {
+    transform: scale(1.1);
+  }
+  #chococream_cake {
+    background-image: url(img/chococream_cake.jpg);
+    clip-path: circle(100% at 0% 50%);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out; /
+  }
+  #chococream_cake:hover {
+    transform: scale(1.1);
+  }
+  #cheese_cake {
+    background-image: url(img/cheese_cake.jpg);
+    clip-path: circle(100% at 0% 50%);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out; /
+  }
+  #cheese_cake:hover {
+    transform: scale(1.1);
+  }
+  * {box-sizing:border-box}
+
+  .slideshow-container {
+  max-width: 800px;
+  position: relative;
+  margin: auto;
+  border: 5px solid black; /* 검정 굵은 실선 */
+  border-radius: 25px; /* 모서리 둥글게 */
+  background-color: #f2f2f2; /* 배경색 */
+  padding: 50px; /* 내부 패딩 */
+  box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+}
+
+.slides {
+  display: none;
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.text {
+  color: #333;
+  font-size: 20px;
+  padding: 20px 0; /* 위 아래 패딩 */
+  text-align: center; /* 글씨 중앙 정렬 */
+}
+
+/* dot을 담는 컨테이너 */
+.dot-container {
+  text-align: center;
+  padding: 20px 0; /* 위 아래 패딩 */
+}
+
+/* 슬라이드 페이지 매김 */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  cursor: pointer; /* 마우스 커서 포인터로 변경 */
+}
+
+.active {
+  background-color: #717171;
+}
+
+.slide_circle {
+  width: 200px; /* 원 크기 */
+  height: 200px;
+  border-radius: 50%; /* 원 모양 */
+  margin: 0 auto; /* 원 중앙 정렬 */
+  overflow: hidden; /* 이미지가 원을 넘어가면 잘라냄 */
+  display: flex; /* Flexbox 사용 */
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  }
+   /* 폼 스타일링 */
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+
+  /* 입력 필드 스타일링 */
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  /* 제출 버튼 스타일링 */
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  /* 제출 버튼 호버 효과 */
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  textarea{
+    color: lightgrey;
+  }
+  #myBtn {
+  display: none; /* 기본적으로 버튼은 표시되지 않습니다 */
+  position: fixed; /* 고정 위치 */
+  bottom: 20px; /* 페이지 하단에서 20px 떨어진 위치 */
+  right: 30px; /* 페이지 우측에서 30px 떨어진 위치 */
+  z-index: 99; /* 다른 요소 위에 표시 */
+  font-size: 18px; /* 글꼴 크기 */
+  border: none; /* 테두리 없음 */
+  outline: none; /* 외곽선 없음 */
+  background-color: #8b4513; /* 배경색 */
+  color: white; /* 글꼴 색 */
+  cursor: pointer; /* 마우스 오버 시 포인터로 표시 */
+  padding: 15px; /* 패딩 */
+  border-radius: 4px; /* 둥근 모서리 */
+  box-shadow: gray 2px 2px;
+}
+@media all and (max-width: 600px){
+  .nav{
+    flex-direction: column;
+  }
+  .article1, .article2, .article3, .article4 {
+    display: flex;
+    flex-direction: column;
+  }
+  .circle {
+    order: 1;
+  }
+  .desc, .desc1, .desc2, .desc3 {
+    order: 2;
+  }
+  p{
+    align-items: center;
+  }
+}
